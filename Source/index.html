@@ -1,0 +1,68 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>360 view</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/minusdigital/360widget@main/Source/index.css">
+        
+    </head>
+    
+    <body>
+    <div class="main">
+        <div class="d-flex align-items-center justify-content-center">
+            
+                <div class="d-flex justify-content-between align-items-center selector">
+                    <button type="button" class="btn btn-secondary btn-circle btn-md gris checked"
+                            onclick="changeColor('Gris')"></button>
+                    <button type="button" class="btn btn-secondary btn-circle btn-md azul"
+                            onclick="changeColor('Azul')"></button>
+                    <button type="button" class="btn btn-secondary btn-circle btn-md gris_purpura"
+                            onclick="changeColor('GrisPurpura')"></button>
+                    <button type="button" class="btn btn-secondary btn-circle btn-md rojo"
+                            onclick="changeColor('Rojo')"></button> 
+                    <button type="button" class="btn btn-secondary btn-circle btn-md blanco"
+                            onclick="changeColor('Blanco')"></button> 
+                </div>
+            </div>
+            <div class="container">
+                <div
+                class="cloudimage-360"
+                id="360"
+                data-folder="https://raw.githubusercontent.com/minusdigital/360widget/main/Models/Coolray/Gris/"
+                data-filename-x="{index}.png"
+                data-amount-x="47"
+                data-hide-360-logo="true">
+                </div>
+                
+                <div class="justify-content-center align-items-center col container" style="margin-top: -35px;">
+                    <span class="row justify-content-center" style="color: #5C6670;"
+                    >360°</span>
+                    <div class="row justify-content-center">
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="71" height="30" fill="none">
+                        <path d="M29.5157 22.7405C22.5441 22.4043 16.2855 21.4819 11.4482 20.1697C-3.81608 16.0297 -3.81608 6.85087 11.4482 2.71093C17.6253 1.0344 26.1114 0 35.4434 0C44.7753 0 53.2615 1.03674 59.4385 2.71093C72.1561 6.16205 76.3525 14.6031 61.8501 19.4365C56.9337 21.0757 50.0763 22.2525 42.2868 22.6868L42.0165 17.7436C49.3912 17.3303 55.7989 16.2469 60.303 14.7455C70.087 11.4835 65.5853 9.50809 58.1593 7.49533C52.3807 5.92855 44.3513 4.95719 35.4411 4.95719C26.5308 4.95719 18.5014 5.92621 12.7228 7.49533C2.35629 10.3067 2.35862 12.5693 12.7228 15.3806C17.115 16.5715 22.8097 17.4191 29.2034 17.7553L25.7106 14.3392L29.1545 10.7923L38.9758 20.3962L29.1545 30L25.7106 26.4531L29.5133 22.7335V22.7405H29.5157Z"
+                        fill="#5C6670">   
+                        </path>
+                    </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/latest/js-cloudimage-360-view.min.js"></script>    
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <script>
+            function changeColor(color) {
+                
+                document.getElementById('360').dataset.folder = "https://raw.githubusercontent.com/minusdigital/360widget/main/Models/Coolray/" + color + "/";
+                
+                window.CI360.update("360", true);
+                
+            }
+        </script>
+    
+    </body>
+    </html>
