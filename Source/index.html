@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <head>
         <title>360 view</title>
@@ -10,7 +10,7 @@
     </head>
     
     <body>
-    <div style="height: 100%; width: 100%;">
+    <div style="width: 100% !important; height:100% !important;">
         <div class="d-flex align-items-center justify-content-center">
             
                 <div class="d-flex justify-content-between align-items-center selector">
@@ -26,7 +26,7 @@
                             onclick="changeColor('Blanco')"></button> 
                 </div>
             </div>
-            <div class="container">
+            <div>
                 <div
                 class="cloudimage-360"
                 id="360"
@@ -62,6 +62,12 @@
                 window.CI360.update("360", true);
                 
             }
+        </script>
+        <script src="https://cdn.jsdelivr.net/gh/minusdigital/360widget@main/Source/loadCoolray.js"></script>
+
+        <script>
+        import { generateHTML } from 'https://cdn.jsdelivr.net/gh/minusdigital/360widget@main/Source/loadCoolray.js';
+        generateHTML();
         </script>
     
     </body>
