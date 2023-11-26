@@ -1,4 +1,4 @@
-function generateHTML() {
+function loadHTML() {
     return `
     <!DOCTYPE html>
     <html lang="en">
