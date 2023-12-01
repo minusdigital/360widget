@@ -1,4 +1,4 @@
-function loadHTML() {
+ export function loadHTML() {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -256,4 +256,6 @@ function loadHTML() {
     </html>
     `;
 }
+
+loadHTML();
 
