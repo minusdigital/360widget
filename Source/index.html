@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/minusdigital/360widget@main/Source/index.css">
-        
+
     </head>
     
     <body>
@@ -56,14 +56,26 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
         <script>
             function changeColor(color) {
-                
                 document.getElementById('360').dataset.folder = "https://raw.githubusercontent.com/minusdigital/360widget/main/Models/Coolray/" + color + "/";
-                
                 window.CI360.update("360", true);
-                
             }
+
+            function preloadImages() {
+                let colors = ['Gris', 'Azul', 'GrisPurpura', 'Rojo', 'Blanco'];
+                let numImages = 47;
+                let html = '';
+
+                for (let color of colors) {
+                    for (let i = 0; i < numImages; i++) {
+                        let url = "https://raw.githubusercontent.com/minusdigital/360widget/main/Models/Coolray/" + color + "/" + i + ".png";
+                        html += '<img src="' + url + '" alt="" style="display: none !important;">';
+                    }
+                }
+
+                document.head.innerHTML += html;
+            }
+
+            preloadImages();
         </script>
-        <script src="https://cdn.jsdelivr.net/gh/minusdigital/360widget@main/Source/loadCoolray.js"></script>
-    
     </body>
     </html>
