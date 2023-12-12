@@ -9,7 +9,7 @@
     </head>
     
     <body>
-    <div class="main">
+    <div>
         <div class="d-flex align-items-center justify-content-center">
             
                 <div class="d-flex justify-content-between align-items-center selector">
@@ -25,7 +25,7 @@
                             onclick="changeColor('Blanco')"></button> 
                 </div>
             </div>
-            <div class="container">
+            <div>
                 <div
                 class="cloudimage-360"
                 id="360"
@@ -35,7 +35,7 @@
                 data-hide-360-logo="true">
                 </div>
                 
-                <div class="justify-content-center align-items-center col container" style="margin-top: -35px;">
+                <div class="justify-content-center align-items-center col container" style="margin-top: -3em;">
                     <span class="row justify-content-center" style="color: #5C6670;">360°</span>
                     <div class="row justify-content-center">
                     <svg  xmlns="http://www.w3.org/2000/svg" width="71" height="30" fill="none">
@@ -57,8 +57,23 @@
                 document.getElementById('360').dataset.folder = "https://raw.githubusercontent.com/minusdigital/360widget/main/Models/GeometryC/" + color + "/";
                 window.CI360.update("360", true);
             }
+
+            function preloadImages() {
+                let colors = ['Negro', 'Azul', 'Purpura', 'Gris', 'Blanco'];
+                let numImages = 47;
+                let html = '';
+
+                for (let color of colors) {
+                    for (let i = 0; i < numImages; i++) {
+                        let url = "https://raw.githubusercontent.com/minusdigital/360widget/main/Models/GeometryC/" + color + "/" + i + ".png";
+                        html += '<img src="' + url + '" alt="" style="display: none !important;">';
+                    }
+                }
+
+                document.head.innerHTML += html;
+            }
+
+            preloadImages();
         </script>
-        <script src="https://cdn.jsdelivr.net/gh/minusdigital/360widget@main/Source/loadGeometry.js" ></script>
-    
     </body>
     </html>
